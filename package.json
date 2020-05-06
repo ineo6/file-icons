@@ -1,0 +1,46 @@
+{
+  "name": "@ineo6/file-icons",
+  "version": "1.0.0",
+  "description": "File-specific icons for front-end project, extracted from file-icons/atom",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ./bin/update.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ineo6",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exuanbo/file-icons-js.git"
+  },
+  "keywords": [
+    "icon",
+    "font",
+    "icon font",
+    "file icon",
+    "font-awesome",
+    "mfizz",
+    "devicons",
+    "file-icons",
+    "octicons",
+    "css",
+    "less",
+    "woff2"
+  ],
+  "bugs": {
+    "url": "https://github.com/ineo6/file-icons/issues"
+  },
+  "homepage": "https://github.com/ineo6/file-icons#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "chalk": "^4.0.0",
+    "download-git-repo": "^3.0.2",
+    "fs-extra": "^9.0.0",
+    "gonzales-pe": "^4.3.0",
+    "ora": "^4.0.4"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  }
+}
