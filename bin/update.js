@@ -44,6 +44,7 @@ download(`${origin}${branch}`, tmpDir, { clone: false }, function (err) {
             // append
             fsExtra.copySync(path.join(cwd, 'resource/mixins.less'), path.join(targetPath, 'styles/mixins.less'));
             fsExtra.copySync(path.join(cwd, 'resource/octicons.less'), path.join(targetPath, 'styles/octicons.less'));
+            fsExtra.copySync(path.join(cwd, 'resource/fix.less'), path.join(targetPath, 'styles/fix.less'));
             fsExtra.copySync(path.join(cwd, 'resource/octicons.woff2'), path.join(targetPath, 'fonts/octicons.woff2'));
 
             // transform less file
