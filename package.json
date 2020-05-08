@@ -1,6 +1,6 @@
 {
   "name": "@ineo6/file-icons",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "File-specific icons for front-end project, extracted from file-icons/atom",
   "main": "index.js",
   "scripts": {
