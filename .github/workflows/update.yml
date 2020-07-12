@@ -3,7 +3,7 @@ name: 'Update & Publish'
 on:
   push:
   schedule:
-    - cron: '* * 15 * * 1'
+    - cron: '* 15 * * 1'
 
 jobs:
   build:
