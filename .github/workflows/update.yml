@@ -1,0 +1,44 @@
+name: 'Update & Publish'
+
+on:
+  push:
+  schedule:
+    - cron: '* * 15 * * 1'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout codes'
+        uses: actions/checkout@v2
+
+      - name: 'Use Node.js 12'
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: 'Transform'
+        run: npm install && npm run build
+
+  publish-npm:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - name: Check if there are changes
+        id: changes
+        uses: UnicornGlobal/has-changes-action@v1.0.11
+
+      - name: 'Version'
+        if: steps.changes.outputs.changed == 1
+        run: npm version major
+
+      - name: 'Publish'
+        if: steps.changes.outputs.changed == 1
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
